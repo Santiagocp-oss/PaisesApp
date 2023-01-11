@@ -1,1 +1,26 @@
-<p>por-capital works!</p>
+<h2>Por Capital</h2>
+<hr>
+
+
+<div class="row">
+    <div class="col">
+       <app-pais-imput (onEnter)="Buscar($event)" ></app-pais-imput>
+    </div>
+</div>
+
+<hr>
+
+<div *ngIf="hayerror"
+    class="alert alert-danger">
+    No se encontro nada con el término {{terminoc}}
+</div>
+
+
+<div    *ngIf="Capital.length > 0" 
+        class="row">
+    <div class="col">
+
+        <app-pais-tabla [paises]="Capital"></app-pais-tabla>
+
+    </div>
+</div>
