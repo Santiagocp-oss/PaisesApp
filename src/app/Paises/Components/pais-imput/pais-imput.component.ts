@@ -1,0 +1,40 @@
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { debounceTime, Subject } from 'rxjs';
+
+@Component({
+  selector: 'app-pais-imput',
+  templateUrl: './pais-imput.component.html'
+})
+export class PaisImputComponent implements OnInit {
+
+  @Output () onEnter: EventEmitter<string> = new EventEmitter();
+  @Output () onDebounce: EventEmitter<string>= new EventEmitter();
+
+  debouncer: Subject<string>= new Subject();
+
+
+  termino: string ='';
+
+
+  ngOnInit(): void {
+
+    this.debouncer
+    .pipe(debounceTime(300))
+    .subscribe( valor => {
+      console.log('debouncer:', valor);
+    })
+    
+  }
+
+  buscar () {
+    this.onEnter.emit(this.termino);
+  }
+
+  teclapresionada( ){
+    this.debouncer.next(this.termino);
+
+  }
+
+
+
+}

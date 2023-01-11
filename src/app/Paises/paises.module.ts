@@ -6,6 +6,8 @@ import { PorRegionComponent } from './Pages/por-region/por-region.component';
 import { VerPaisComponent } from './Pages/ver-pais/ver-pais.component';
 import { FormsModule } from '@angular/forms';
 import { appRoutingModule } from '../app-roating.module';
+import { PaisTablaComponent } from './Components/pais-tabla/pais-tabla.component';
+import { PaisImputComponent } from './Components/pais-imput/pais-imput.component';
 
 
 
@@ -14,7 +16,9 @@ import { appRoutingModule } from '../app-roating.module';
     PorCapitalComponent,
     PorPaisComponent,
     PorRegionComponent,
-    VerPaisComponent
+    VerPaisComponent,
+    PaisTablaComponent,
+    PaisImputComponent
   ],
   exports: [
     PorCapitalComponent,
