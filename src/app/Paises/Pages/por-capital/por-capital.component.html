@@ -1,10 +1,14 @@
+<div id="Pages">
 <h2>Por Capital</h2>
 <hr>
 
 
 <div class="row">
     <div class="col">
-       <app-pais-imput (onEnter)="Buscar($event)" ></app-pais-imput>
+       <app-pais-imput 
+       (onEnter)="Buscar($event)" 
+       placeholder=" Buscar por Capital...">
+        </app-pais-imput>
     </div>
 </div>
 
@@ -23,4 +27,5 @@
         <app-pais-tabla [paises]="Capital"></app-pais-tabla>
 
     </div>
+</div>
 </div>

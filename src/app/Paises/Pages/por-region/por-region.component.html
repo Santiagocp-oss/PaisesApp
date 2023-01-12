@@ -1,1 +1,31 @@
-<p>por-region works!</p>
+<div id="Pages">
+<h2>Por Región</h2>
+<hr>
+
+
+<div class="row">
+    <div class="col">
+       <app-pais-imput 
+       (onEnter)="Buscar($event)" 
+       placeholder=" Buscar por Region...">
+        </app-pais-imput>
+    </div>
+</div>
+
+<hr>
+
+<div *ngIf="hayerror"
+    class="alert alert-danger">
+    No se encontro nada con el término {{terminor}}
+</div>
+
+
+<div    *ngIf="Region.length > 0" 
+        class="row">
+    <div class="col">
+
+        <app-pais-tabla [paises]="Region"></app-pais-tabla>
+
+    </div>
+</div>
+</div>
