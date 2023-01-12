@@ -1,5 +1,3 @@
-
-
 export interface Country {
     name:         Name;
     tld:          string[];

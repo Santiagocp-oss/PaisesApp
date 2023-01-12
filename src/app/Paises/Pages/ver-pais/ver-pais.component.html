@@ -13,9 +13,9 @@
     </div>
 
     <div class="row">
-        <div class="col">
+        <div class="col-4">
             <h3>Bandera</h3>
-            <img [src]="pais.flags.svg" class="img-thumbnail"alt="">
+            <img [src]="pais.flags.svg" class="img-thumbnail" >
         </div>
         <div class="col">
             <h3>Información</h3>
@@ -24,9 +24,19 @@
                     <strong> Poblacion </strong> {{pais.population | number}}
 
                 </li>
+                <li class="list-group-item">
+                    <strong> Código Numérico </strong> {{pais.ccn3}}
+
+                </li>
+                <li class="list-group-item">
+                    <strong> Codigo alfanumerico </strong> {{pais.cca3}}
+
+                </li>
+                
             </ul>
         </div>
     </div>
+
 </ng-template>
 
 
