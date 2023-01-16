@@ -1,4 +1,35 @@
-<div id="Pages">
+
+
+<h3>Buscar por Region <small>{{regionActiva | titlecase}}</small></h3>
+<hr>
+
+<h5>Seleccione la Region</h5>
+
+<div class="row">
+    <div class="col">
+
+        
+                <!-- [class.btn-primary]="region === region" -->
+
+        <button *ngFor="let region of regiones"
+                [class]="getClaseCSS(region)"
+                (click)="activarRegion(region)">
+            {{region | titlecase }}
+        </button>
+    </div>
+</div>
+<div    *ngIf="paises.length > 0" 
+    class="row">
+<div class="col">
+
+    <app-pais-tabla [paises]="paises"></app-pais-tabla>
+
+</div>
+</div>
+
+
+
+<!-- <div id="Pages">
 <h2>Por Región</h2>
 <hr>
 
@@ -28,4 +59,4 @@
 
     </div>
 </div>
-</div>
+</div> -->
