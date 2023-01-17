@@ -1,4 +1,4 @@
-<div id="Pages">
+<div class="animate__animated animate__fadeIn animate__faster">
 <h2>Por Capital</h2>
 <hr>
 
@@ -7,10 +7,29 @@
     <div class="col">
        <app-pais-imput 
        (onEnter)="Buscar($event)" 
+       (onDebounce)="sugerencias( $event)"
        placeholder=" Buscar por Capital...">
         </app-pais-imput>
     </div>
 </div>
+
+<ul *ngIf="mostrarSugerencias" 
+    class="list-group">
+    <li *ngFor="let pais of capitalSugeridos"
+        class="list-group-item list-group-item-action">
+        <a class="nav-link"
+        [routerLink]="['/pais', pais.cca2]">
+            {{pais.capital}}
+        </a>
+    </li>   
+
+    <li class="list-group-item list-group-item-action"
+    (click)="buscarSugerido( terminoc)">
+        <a class="nav-link">
+            Buscar "{{terminoc}}"
+        </a>
+    </li> 
+</ul>
 
 <hr>
 
@@ -20,11 +39,11 @@
 </div>
 
 
-<div    *ngIf="Capital.length > 0" 
+<div    *ngIf="capital.length > 0" 
         class="row">
     <div class="col">
 
-        <app-pais-tabla [paises]="Capital"></app-pais-tabla>
+        <app-pais-tabla [paises]="capital"></app-pais-tabla>
 
     </div>
 </div>

@@ -25,6 +25,7 @@ export class PaisImputComponent implements OnInit {
     .pipe(debounceTime(300))
     .subscribe( valor => {
       console.log('debouncer:', valor);
+      this.onDebounce.emit( valor );
     })
     
   }
